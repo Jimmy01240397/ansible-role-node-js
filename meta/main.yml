@@ -1,7 +1,8 @@
 galaxy_info:
   author: Chummy
   description: Ansible role for Node.js
-
+  role_name: node-js
+  
   license: MIT
 
   min_ansible_version: 1.4
