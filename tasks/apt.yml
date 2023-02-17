@@ -1,0 +1,16 @@
+- name: download setup script
+  get_url:
+    dest: /tmp/setup_{{ node_js_version }}
+    mode: u+x
+    url: http://deb.nodesource.com/setup_{{ node_js_version }}
+
+- name: execute setup script
+  shell: /tmp/setup_{{ node_js_version }}
+
+- name: install dependencies
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    name:
+    - nodejs
+    - build-essential
